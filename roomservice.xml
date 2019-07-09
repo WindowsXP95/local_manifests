@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<project name="OreoMotoPerry/android_device_motorola_perry" path="device/motorola/perry" remote="github" revision="lineage-15.1" />
+	<project name="OreoMotoPerry/android_device_motorola_msm8937-common" path="device/motorola/msm8937-common" remote="github" revision="lineage-15.1" />
+	<project name="OreoMotoPerry/android_kernel_motorola_msm8953-common" path="kernel/motorola/msm8953-common" remote="github" revision="lineage-15.1-64" />
+	<project name="OreoMotoPerry/proprietary_vendor_motorola_perry" path="vendor/motorola/perry" remote="github" revision="lineage-15.1" />
+	<project name="OreoMotoPerry/proprietary_vendor_motorola_msm8937-common" path="vendor/motorola/msm8937-common" remote="github" revision="lineage-15.1" />
+</manifest>
