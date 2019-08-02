@@ -2,7 +2,7 @@
 <manifest>
 	<project name="moto-msm8937-common/android_device_motorola_perry" path="device/motorola/perry" remote="github" revision="lineage-15.1" />
 	<project name="moto-msm8937-common/android_device_motorola_msm8937-common" path="device/motorola/msm8937-common" remote="github" revision="lineage-15.1" />
-	<project name="moto-msm8937-common/android_kernel_motorola_msm8937" path="kernel/motorola/msm8937" remote="github" revision="oreopie-treble" />
+	<project name="moto-msm8937-common/android_kernel_motorola_msm8937" path="kernel/motorola/msm8937" remote="github" revision="oreopie" />
 	<project name="moto-msm8937-common/proprietary_vendor_motorola_perry" path="vendor/motorola/perry" remote="github" revision="lineage-15.1" />
 	<project name="moto-msm8937-common/proprietary_vendor_motorola_msm8937-common" path="vendor/motorola/msm8937-common" remote="github" revision="lineage-15.1" />
 </manifest>
