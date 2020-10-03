@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<project name="mt8127-tadpole/android_device_quanta_narnia" path="device/quanta/narnia" remote="github" revision="lineage-14.1" />
+	<project name="mt8127-tadpole/android_device_mediatek_mt8127-common" path="device/mediatek/mt8127-common" remote="github" revision="cm-12.1" />
+	<project name="mt8127-tadpole/android_kernel_mediatek_mt8127-common" path="kernel/mediatek/mt8127-common" remote="github" revision="cm-14.1" />
+	<project name="mt8127-tadpole/android_vendor_mediatek" path="vendor/mediatek" remote="github" revision="master" />
+	<project name="mt8127-tadpole/android_vendor_mediatek_mt8127-narnia" path="vendor/mediatek/mt8127-narnia" remote="github" revision="lineage-15.1" />
+	
+<!--Dependencies--> 
+<project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" />
+
+</manifest>
