@@ -1,5 +1,5 @@
 # Intro
-This repo contains a local_manifest file for the narina device aka, The Leapfrog Epic. 
+This repo contains a local_manifest file for the narnia device aka, The Leapfrog Epic. 
 
 # Device Info
 The LeapFrog Epic (codenamed "narnia/UYT") is an Android-powered mini tablet computer developed and marketed by LeapFrog and manufactured by Quanta Computer. As with all of LeapFrog's devices, the Epic is designed and marketed primarily as an educational device for children ages 3-9, with bespoke software designed to teach children about elementary school subjects such as language, maths and geography amongst other things. Under the bonnet, it shares a lot in common with entry-level, discount-price tablets such as the Amazon Fire line of tablets and was even made by the same OEM.
