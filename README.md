@@ -43,27 +43,65 @@ Working
 * Audio (internal and headset)
 * Internal microphone
 
-## Building Lineage for narnia
+﻿Build guide
 
-Follow the instructions below
 
-First of all, follow step 1 and continue from there
+1) get Xubuntu 16.04 installed on your machine somehow, like via burning it to a CD or USB and booting from it.  I will mostly leave this part up to you since some people want to dual boot it beside windows and some people want to replace windows entirely.  I won't be saying how to install it here, that's up to you.  I will say this though, make sure you have AT LEAST 4GB OF PHYSICAL RAM AT MINIMUM, and that you have AT LEAST 200GB OF HARD DRIVE SPACE AT MINIMUM
 
-        # repo init -u git://github.com/LineageOS/android.git -b cm-14.1
-        
-        # Go to your .repo folder in the directory your source is in. 
-        The folder is hidden in your work dir, so enable hidden files to view it. Make a new folder called 'local_manifests'. Then enter 'git clone https://github.com/WindowsXP95/local_manifests_narnia.git'
-        
-        # repo sync
-        
-        # cd device/quanta/narnia/patches/patch.sh
-        
-        # . build/envsetup.sh
 
-        # lunch lineage_narnia-eng
+http://cdimage.ubuntu.com/xubuntu/releases/16.04/release/xubuntu-16.04.5-desktop-amd64.iso
 
-        # make clean && make bacon
-        
+
+2) you'll want to add a new swap file or supplement your existing swap file.  Swap acts like slower RAM when all your real RAM is used up and this is necessary if your computer has less than 16GB of real physical RAM.  Make a swap file with the following commands
+
+
+sudo fallocate -l 16G /myswapfile
+sudo chmod 600 /myswapfile
+sudo mkswap /myswapfile
+sudo swapon /myswapfile
+
+
+3) install all the dependencies for building with the following really long command
+
+
+sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev rep openjdk-8-jdk imagemagick schedtool flex jq maven
+
+
+4) close out from that terminal session once its done and go into your home directory.  make a new folder called "lin14" or something (this assumes you're building lineage 14.1 nougat) and go into that folder younook just made.  Right click somewhere and click Open Terminal Here. Once the terminal opens inside the lin14 folder you made run the following command to get the environment everything synced up
+
+
+repo init -u https://github.com/LineageOS/android.git -b cm-14.1
+
+
+5) at this point it will say things like "Error, you need a name and an email to do this" so copy those commands it gives you and modify+paste+run them replacing the "you@example.com" and the "Your Name" with your actual name and email
+
+
+Note that copying and pasting in the Xubuntu terminal isn't like normal, Ctrl+C and Ctrl+V don't work, you have to use Ctrl+Shift+C and Ctrl+Shift+V
+
+
+6) once you set up your name and email you have to re-run that repo init command above one more time.  then once it does what it has to do successfully you run the following command below and wait (because this takes a really long time)
+
+
+repo sync --force-sync
+
+
+7) after a couple hours it should be done, now you have to add all the device trees and stuff so it knows what phone to build for.  I will assume you want to build for perry so in your terminal type the following command to make the file browser open up in the place we need it to
+
+
+thunar ~/lin14/.repo
+
+
+8) inside the new file manager window make a new folder called "local_manifests" and inside THAT make a new file called "roomservice.xml" and open that roomservice with a text editor by clicking on it.  Copy everything you see from the link below and paste/save in the roomservice
+
+
+https://raw.githubusercontent.com/WindowsXP95/local_manifests_narnia/master/roomservice.xml
+
+
+9) once you have your roomservice saved you can close out of that file manager, go back to that terminal emulator session you're running (assuming you didn't close out of it, if you did re-open a new one and MAKE SURE IT'S IN THE LIN14 FOLDER YOU MADE), and re-run "repo sync --force-sync" again so it can pull all the device/kernel/vendor trees for perry that you just specified in the roomservice file
+
+
+10) once it is done the second time we are ready to build.  In the terminal emulator window inside the lin14 folder where everything is, run "source build/envsetup.sh" and then "brunch narnia" to finally initiate the building process.  this will take a very long time.  
+
  ###### Maintainers
 -mac2612 [github](https://github.com/mac2612)
 
